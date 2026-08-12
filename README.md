@@ -1,69 +1,41 @@
-# AI Job Portal 🚀
+# AI Job Portal
 
-**Full Stack Portfolio Project** — AI-Powered Job Board
+Full-stack portfolio project demonstrating a job board with candidate/employer roles and optional AI-assisted matching.
 
-A modern full-stack application where companies can post jobs and candidates get AI-powered job matching + resume analysis.
+> **Status:** engineering demo. Jobs, employers, candidates, resume scores and AI output in a demo environment are illustrative unless explicitly connected to real verified data.
 
-## 📁 Project Structure
+## Stack
 
-```
-ai-job-portal/
-├── frontend/          # Next.js 14 + Tailwind CSS + TypeScript
-├── backend/           # FastAPI + SQLAlchemy + PostgreSQL
-├── .gitignore
-└── README.md
-```
-
-## ✨ Features
-
-- 🔐 JWT Authentication (Candidate & Employer roles)
-- 📄 Job posting & searching
-- 🤖 AI Resume Parser & Job Matching (OpenAI ready)
-- 📊 Dashboard for Employers & Candidates
-- 📱 Fully responsive UI
-- ⚡ FastAPI backend with automatic docs (`/docs`)
-
-## 🛠️ Tech Stack
-
-| Layer       | Technology                          |
-|-------------|-------------------------------------|
-| Frontend    | Next.js 14, TypeScript, Tailwind CSS, Shadcn/ui ready |
-| Backend     | FastAPI, SQLAlchemy, Pydantic       |
-| Database    | PostgreSQL (or SQLite for local)    |
-| Auth        | JWT                                 |
-| AI          | OpenAI API (optional)               |
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Rk-io-A/ai-job-portal.git
-cd ai-job-portal
+```text
+Frontend   Next.js 14 + TypeScript + Tailwind CSS
+Backend    FastAPI + SQLAlchemy + Pydantic
+Database   SQLite locally / PostgreSQL-ready
+Auth       JWT
+AI         Optional provider integration
 ```
 
-### 2. Backend Setup
+## Features
+
+- candidate and employer account flows;
+- job posting and search;
+- dashboard patterns;
+- resume-analysis / matching integration points;
+- responsive UI;
+- FastAPI documentation in local development.
+
+## Local setup
+
+Backend:
 
 ```bash
 cd backend
 python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# macOS / Linux
 source venv/bin/activate
-
 pip install -r requirements.txt
-
-# Run the server
 uvicorn main:app --reload --port 8000
 ```
 
-Backend will run at: **http://localhost:8000**  
-API Docs: **http://localhost:8000/docs**
-
-### 3. Frontend Setup
+Frontend:
 
 ```bash
 cd frontend
@@ -71,39 +43,30 @@ npm install
 npm run dev
 ```
 
-Frontend will run at: **http://localhost:3000**
+## Environment
 
-## 🔑 Environment Variables
+Backend example:
 
-### Backend (`backend/.env`)
 ```env
 DATABASE_URL=sqlite:///./jobportal.db
-SECRET_KEY=your-super-secret-key-change-this
-OPENAI_API_KEY=sk-xxxxxxxx   # optional
+SECRET_KEY=REPLACE_WITH_A_RANDOM_SECRET
+OPENAI_API_KEY=
 ```
 
-### Frontend (`frontend/.env.local`)
+Frontend:
+
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
-## 📦 API Endpoints (Backend)
+Provider API keys and JWT signing secrets belong only on the backend.
 
-| Method | Endpoint              | Description                |
-|--------|-----------------------|----------------------------|
-| POST   | `/auth/register`      | Register user              |
-| POST   | `/auth/login`         | Login & get JWT            |
-| GET    | `/jobs`               | List all jobs              |
-| POST   | `/jobs`               | Create job (Employer)      |
-| GET    | `/jobs/{id}`          | Get job details            |
-| POST   | `/ai/match`           | AI job matching            |
+## Security / production notes
 
-## 👨‍💻 Author
+Before any real hiring use, add verified employer authorization, object ownership, resume/file privacy controls, retention/deletion rules, rate limits, audit logs and appropriate AI transparency. Do not make automated employment decisions solely from an unvalidated demo score.
 
-**Rajiv Kapur**  
-Software Architect & Full Stack Developer  
-[Portfolio](https://rajivkapur.in.net) · [GitHub](https://github.com/Rk-io-A)
+## Author
 
----
+Rajiv Kapur — Software Architect & Full-Stack Developer
 
-⭐ Star this repo if you find it useful!
+Portfolio: `https://rajivkapur.in.net`
